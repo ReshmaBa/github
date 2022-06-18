@@ -18,9 +18,10 @@ public class StepClass {
 
 @Given("User has to launch the chrome browser and hit the url")
 public void user_has_to_launch_the_chrome_browser_and_hit_the_url() {
-
-	//WebDriverManager.chromedriver().setup();;
+	System.setProperty("webdriver.chrome.driver","C:\\\\\\\\Users\\\\\\\\Reshma\\\\\\\\Desktop\\\\\\\\selenium\\\\\\\\chromedriver.exe");
 	driver=new ChromeDriver();
+	//WebDriverManager.chromedriver().setup();;
+	//driver=new ChromeDriver();
 	driver.get("https://www.facebook.com/");
 	driver.manage().window().maximize();
 	
@@ -50,6 +51,14 @@ public void user_has_to_click_the_login_button() {
 public void user_has_to_navigate_to_the_home_page() {
    System.out.println("Please check the Facebook......."); 
 }
+@When("User has to navigate to amazon page")
+public void user_has_to_navigate_to_amazon_page() {
+	driver.get("https://www.amazon.in/");
+	
+}
+
+    
+
 
 @Then("User has to close the chrome browser")
 public void user_has_to_close_the_chrome_browser() {
